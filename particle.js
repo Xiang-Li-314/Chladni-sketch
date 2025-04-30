@@ -30,6 +30,9 @@ class Particle {
   
       const desired  = p5.Vector.sub(target, this.position).setMag(this.maxSpeed);
       const steering = p5.Vector.sub(desired, this.velocity).limit(this.maxForce);
+
+      // add this line for perpetual jitter
+      steering.add(p5.Vector.random2D().mult(0.005));
       return steering;
     }
   
