@@ -1,6 +1,6 @@
 let particles = [];
 const NUM_PARTICLES = 10000;
-let m = 0, n = 0;            // now mutable
+let m = 1, n = 1;            // now mutable
 const threshold = 0.05;
 
 let mInput, nInput;
