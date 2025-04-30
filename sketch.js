@@ -6,24 +6,26 @@ const threshold = 0.05;
 let mInput, nInput;
 
 function setup() {
-  createCanvas(500, 500);
-  strokeWeight(1);
-
-  // create the two inputs
-  createP('m:').style('display','inline').style('color','#fff');
-  mInput = createInput(m.toString(), 'number')
-           .style('width','50px')
-           .input(updateModes);
-  createSpan('  n:').style('color','#fff');
-  nInput = createInput(n.toString(), 'number')
-             .style('width','50px')
-             .input(updateModes);
-
-  // init particles
-  for (let i = 0; i < NUM_PARTICLES; i++) {
-    particles.push(new Particle());
+    createCanvas(500, 500);
+    strokeWeight(1);
+  
+    // create m input
+    mInput = createInput(m.toString(), 'number')
+              .style('width','50px')
+              .position(10, 10)        // ← place at (10,10)
+              .input(updateModes);
+  
+    // create n input
+    nInput = createInput(n.toString(), 'number')
+              .style('width','50px')
+              .position(70, 10)        // ← place just to the right
+              .input(updateModes);
+  
+    // init particles …
+    for (let i = 0; i < NUM_PARTICLES; i++) {
+      particles.push(new Particle());
+    }
   }
-}
 
 function updateModes() {
   // read & clamp the inputs
