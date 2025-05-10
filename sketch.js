@@ -1,12 +1,12 @@
 let particles = [];
-const NUM_PARTICLES = 1000;
+const NUM_PARTICLES = 5000;
 let m = 1, n = 1;            // now mutable
 const threshold = 0.05;
 
 let mInput, nInput;
 
 function setup() {
-    createCanvas(200, 200);
+    createCanvas(400, 400);
     strokeWeight(1);
   
     // create m input
